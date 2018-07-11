@@ -4,7 +4,25 @@ from pywps import Process, LiteralInput, ComplexOutput
 from pywps import Format
 from pywps.app.Common import Metadata
 
-from climafwps import tsplot
+
+ALLOWED_VALUES = {
+    'model':
+        'ACCESS1-0 ACCESS1-3 bcc-csm1-1 bcc-csm1-1-m BNU-ESM CanCM4 '
+        'CanESM2 CCSM4 CESM1-BGC CESM1-CAM5 CESM1-WACCM CMCC-CM CMCC-CMS '
+        'CNRM-CM5 CSIRO-Mk3-6-0 EC-EARTH FGOALS-g2 FIO-ESM GFDL-CM2p1 '
+        'GFDL-CM3 GFDL-ESM2G GFDL-ESM2M GISS-E2-H GISS-E2-H-CC GISS-E2-R '
+        'GISS-E2-R-CC HadCM3 HadGEM2-AO HadGEM2-CC HadGEM2-ES inmcm4 '
+        'IPSL-CM5A-LR IPSL-CM5A-MR IPSL-CM5B-LR MIROC4h MIROC5 MIROC-ESM '
+        'MIROC-ESM-CHEM MPI-ESM-LR MPI-ESM-MR MRI-CGCM3 NorESM1-M NorESM1-ME'.split(),
+    'experiment':
+        'rcp45 rcp60 rcp8'.split(),
+    'variable':
+        'cl clt evspsbl hur huss prc ps rldscs rlutcs rsdt '
+        'rsut sci tas tauu ua vas cli clw hfls hurs '
+        'mc prsn psl rlus rsds rsus rsutcs sfcWind tasmax '
+        'tauv uas wap clivi clwvi hfss hus pr prw rlds rlut '
+        'rsdscs rsuscs sbl ta tasmin ts va zg'.split()
+}
 
 
 class TimeSeriesPlot(Process):
@@ -12,13 +30,13 @@ class TimeSeriesPlot(Process):
         inputs = [
             LiteralInput('model', 'Model',
                          default='HadGEM2-ES', data_type='string',
-                         allowed_values=tsplot.ALLOWED_VALUES['model']),
+                         allowed_values=ALLOWED_VALUES['model']),
             LiteralInput('experiment', 'Experiment',
                          default='rcp45', data_type='string',
-                         allowed_values=tsplot.ALLOWED_VALUES['experiment']),
+                         allowed_values=ALLOWED_VALUES['experiment']),
             LiteralInput('variable', 'Variable',
                          default='tas', data_type='string',
-                         allowed_values=tsplot.ALLOWED_VALUES['variable'])
+                         allowed_values=ALLOWED_VALUES['variable'])
         ]
         outputs = [
             ComplexOutput('output', 'Output plot',
@@ -49,6 +67,7 @@ class TimeSeriesPlot(Process):
 
     @staticmethod
     def _handler(request, response):
+        from climafwps import tsplot
         response.update_status('Plotting ...', 0)
         # output in workdir
         output_filename = os.path.joing(self.workdir, 'output.png')
