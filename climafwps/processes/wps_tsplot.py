@@ -69,7 +69,7 @@ class TimeSeriesPlot(Process):
         from climafwps import tsplot
         response.update_status('Plotting ...', 0)
         # output in workdir
-        output_filename = os.path.joing(self.workdir, 'output.png')
+        output_filename = os.path.join(self.workdir, 'output.png')
         # start tsplot
         tsplot.create_global_mean_ts_plot(
             model=request.inputs['model'][0].data,
