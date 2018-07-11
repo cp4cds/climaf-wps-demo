@@ -6,7 +6,7 @@ Holds function to generate a plot of a global mean time series
 from CMIP5.
 """
 
-from climaf.api import ds, cfile, plot
+from climaf.api import ds, cfile, plot, space_average
 
 
 _ALLOWED_VALUES = {
