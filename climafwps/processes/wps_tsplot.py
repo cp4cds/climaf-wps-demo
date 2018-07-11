@@ -1,15 +1,30 @@
-from pywps import Process, LiteralInput, LiteralOutput
+import os.path
+
+from pywps import Process, LiteralInput, ComplexOutput
+from pywps import Format
 from pywps.app.Common import Metadata
+
+from climafwps import tsplot
 
 
 class TimeSeriesPlot(Process):
     def __init__(self):
         inputs = [
-            LiteralInput('delay', 'Delay between every update',
-                         default='10', data_type='float')
+            LiteralInput('model', 'Model',
+                         default='HadGEM2-ES', data_type='string',
+                         allowed_values=tsplot.ALLOWED_VALUES['model']),
+            LiteralInput('experiment', 'Experiment',
+                         default='rcp45', data_type='string',
+                         allowed_values=tsplot.ALLOWED_VALUES['experiment']),
+            LiteralInput('variable', 'Variable',
+                         default='tas', data_type='string',
+                         allowed_values=tsplot.ALLOWED_VALUES['variable'])
         ]
         outputs = [
-            LiteralOutput('sleep_output', 'Sleep Output', data_type='string')
+            ComplexOutput('output', 'Output plot',
+                          abstract='Generated timeseries plot.',
+                          as_reference=True,
+                          supported_formats=[Format('image/png')])
         ]
 
         super(TimeSeriesPlot, self).__init__(
@@ -34,15 +49,19 @@ class TimeSeriesPlot(Process):
 
     @staticmethod
     def _handler(request, response):
-        import time
-
-        if 'delay' in request.inputs:
-            sleep_delay = request.inputs['delay'][0].data
-        else:
-            sleep_delay = 10
-
-        time.sleep(sleep_delay)
-        response.update_status('PyWPS Process started. Waiting...', 20)
-        response.outputs['sleep_output'].data = 'done sleeping'
-
+        response.update_status('Plotting ...', 0)
+        # output in workdir
+        output_filename = os.path.joing(self.workdir, 'output.png')
+        # start tsplot
+        tsplot.create_global_mean_ts_plot(
+            model=request.inputs['model'][0].data,
+            experiment=request.inputs['experiment'][0].data,
+            start_year=2010,
+            end_year=2020,
+            variable=request.inputs['variable'][0].data,
+            output=output_filename)
+        # store result
+        response.outputs['output'].file = output_filename
+        # done
+        response.update_status('Plotting done', 100)
         return response

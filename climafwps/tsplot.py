@@ -9,7 +9,7 @@ from CMIP5.
 from climaf.api import ds, cfile, plot, space_average
 
 
-_ALLOWED_VALUES = {
+ALLOWED_VALUES = {
     'model':
         'ACCESS1-0 ACCESS1-3 bcc-csm1-1 bcc-csm1-1-m BNU-ESM CanCM4 '
         'CanESM2 CCSM4 CESM1-BGC CESM1-CAM5 CESM1-WACCM CMCC-CM CMCC-CMS '
@@ -35,9 +35,9 @@ def create_global_mean_ts_plot(model, experiment, start_year, end_year, variable
     Create a global average time series of CMIP5 variable and plot to output.
     """
     # Validate arguments
-    assert(model in _ALLOWED_VALUES['model'])
-    assert(experiment in _ALLOWED_VALUES['experiment'])
-    assert(variable in _ALLOWED_VALUES['variable'])
+    assert(model in ALLOWED_VALUES['model'])
+    assert(experiment in ALLOWED_VALUES['experiment'])
+    assert(variable in ALLOWED_VALUES['variable'])
 
     dset = ds(project='CMIP5', model=model, experiment=experiment, frequency='monthly',
               period='{}-{}'.format(start_year, end_year), variable=variable)
@@ -48,7 +48,3 @@ def create_global_mean_ts_plot(model, experiment, start_year, end_year, variable
              format='png')
     cfile(p, target=output)
     return p
-
-
-if __name__ == '__main__':
-    create_global_mean_ts_plot('HadGEM2-ES', 'rcp45', 2010, 2020, 'tas', 'output.png')
