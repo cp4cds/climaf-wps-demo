@@ -2,7 +2,7 @@ CliMAF WPS Demo
 ===============================
 
 .. image:: https://img.shields.io/badge/docs-latest-brightgreen.svg
-   :target: http://climafwps.readthedocs.io/en/latest/?badge=latest
+   :target: http://climaf-wps-demo.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
 .. image:: https://travis-ci.org/cp4cds/climaf-wps-demo.svg?branch=master
@@ -24,7 +24,7 @@ CliMAF WPS Demo (the bird)
 A Web Processing Service for CliMAF.
 
 * Free software: Apache Software License 2.0
-* Documentation: https://climafwps.readthedocs.io.
+* Documentation: https://climaf-wps-demo.readthedocs.io.
 
 Credits
 -------
