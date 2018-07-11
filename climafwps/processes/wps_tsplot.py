@@ -12,7 +12,7 @@ class TimeSeriesPlot(Process):
             LiteralOutput('sleep_output', 'Sleep Output', data_type='string')
         ]
 
-        super(Sleep, self).__init__(
+        super(TimeSeriesPlot, self).__init__(
             self._handler,
             identifier='tsplot',
             version='1.1.0',

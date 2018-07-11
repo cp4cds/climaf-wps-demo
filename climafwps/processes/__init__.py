@@ -3,4 +3,5 @@ from .wps_tsplot import TimeSeriesPlot
 
 processes = [
     Sleep(),
+    TimeSeriesPlot(),
 ]
