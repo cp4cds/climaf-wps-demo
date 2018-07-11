@@ -65,8 +65,7 @@ class TimeSeriesPlot(Process):
             status_supported=True
         )
 
-    @staticmethod
-    def _handler(request, response):
+    def _handler(self, request, response):
         from climafwps import tsplot
         response.update_status('Plotting ...', 0)
         # output in workdir
