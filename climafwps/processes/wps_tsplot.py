@@ -4,7 +4,7 @@ from pywps import Process, LiteralInput, ComplexOutput
 from pywps import Format
 from pywps.app.Common import Metadata
 
-from climaf import util
+from climafwps import util
 
 ALLOWED_VALUES = {
     'model':
