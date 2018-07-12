@@ -36,7 +36,11 @@ class TimeSeriesPlot(Process):
                          allowed_values=ALLOWED_VALUES['experiment']),
             LiteralInput('variable', 'Variable',
                          default='tas', data_type='string',
-                         allowed_values=ALLOWED_VALUES['variable'])
+                         allowed_values=ALLOWED_VALUES['variable']),
+            LiteralInput('start_year', 'Start Year',
+                         default='2010', data_type='integer'),
+            LiteralInput('end_year', 'End Year',
+                         default='2020', data_type='integer'),
         ]
         outputs = [
             ComplexOutput('output', 'Output plot',
@@ -74,8 +78,8 @@ class TimeSeriesPlot(Process):
         tsplot.create_global_mean_ts_plot(
             model=request.inputs['model'][0].data,
             experiment=request.inputs['experiment'][0].data,
-            start_year=2010,
-            end_year=2020,
+            start_year=request.inputs['start_year'][0].data,
+            end_year=request.inputs['end_year'][0].data,
             variable=request.inputs['variable'][0].data,
             output=output_filename)
         # store result
