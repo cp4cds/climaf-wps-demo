@@ -4,6 +4,7 @@ from pywps import Process, LiteralInput, ComplexOutput
 from pywps import Format
 from pywps.app.Common import Metadata
 
+from climaf import util
 
 ALLOWED_VALUES = {
     'model':
@@ -61,7 +62,12 @@ class TimeSeriesPlot(Process):
             profile='',
             metadata=[
                 Metadata('CliMAF', 'https://github.com/senesis/climaf'),
-                Metadata('GitHub', 'https://github.com/cp4cds/climaf-wps-demo'),
+                Metadata('Documentation',
+                         'https://climaf-wps-demo.readthedocs.io/en/latest/processes.html#tsplot',
+                         role=util.WPS_ROLE_DOC),
+                Metadata('Media',
+                         'https://climaf-wps-demo.readthedocs.io/en/latest/_static/media/tsplot_thumbnail.png',
+                         role=util.WPS_ROLE_MEDIA),
             ],
             inputs=inputs,
             outputs=outputs,
