@@ -5,6 +5,7 @@ channels:
 - defaults
 dependencies:
 - pywps=4.1.0
+- owslib=0.17
 - jinja2
 - click
 - psutil
