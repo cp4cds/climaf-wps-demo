@@ -61,7 +61,7 @@ class TimeSeriesPlot(Process):
                      ' in the global mean value against time.',
             profile='',
             metadata=[
-                Metadata('CliMAF', 'https://github.com/senesis/climaf'),
+                Metadata('CliMAF', 'http://climaf.readthedocs.io/en/latest/'),
                 Metadata('Documentation',
                          'https://climaf-wps-demo.readthedocs.io/en/latest/processes.html#tsplot',
                          role=util.WPS_ROLE_DOC),

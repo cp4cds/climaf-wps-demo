@@ -17,11 +17,7 @@ CliMAF WPS Demo
     :target: https://gitter.im/bird-house/birdhouse?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
     :alt: Join the chat at https://gitter.im/bird-house/birdhouse
 
-
-CliMAF WPS Demo (the bird)
-  *CliMAF WPS Demo is a bird ...*
-
-A Web Processing Service for CliMAF.
+A Web Processing Service for CliMAF_.
 
 * Free software: Apache Software License 2.0
 * Documentation: https://climaf-wps-demo.readthedocs.io.
@@ -33,3 +29,4 @@ This package was created with Cookiecutter_ and the `bird-house/cookiecutter-bir
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`bird-house/cookiecutter-birdhouse`: https://github.com/bird-house/cookiecutter-birdhouse
+.. _CliMAF: http://climaf.readthedocs.io/en/latest/
