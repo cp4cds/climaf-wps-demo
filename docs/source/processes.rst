@@ -14,6 +14,8 @@ Sleep
    :docstring:
    :skiplines: 1
 
+.. _tsplot:
+
 CMIP5 Global Mean Time Series
 -----------------------------
 
