@@ -14,16 +14,9 @@ Sleep
    :docstring:
    :skiplines: 1
 
-Wordcounter
------------
+CMIP5 Global Mean Time Series
+-----------------------------
 
-.. autoprocess:: climafwps.processes.wps_wordcounter.WordCounter
-   :docstring:
-   :skiplines: 1
-
-InOut
------
-
-.. autoprocess:: climafwps.processes.wps_inout.InOut
+.. autoprocess:: climafwps.processes.wps_tsplot.TimeSeriesPlot
    :docstring:
    :skiplines: 1
