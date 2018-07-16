@@ -71,6 +71,8 @@ Check the log files for errors:
 
    $ tail -f  pywps.log
 
+.. warning:: To be able to run the climaf processes you need to configure the CMIP5 data archive. At CEDA you can use ``climafwps start -c etc/ceda.cfg``.
+
 ... or do it the lazy way
 +++++++++++++++++++++++++
 
@@ -87,7 +89,7 @@ You can also use the ``Makefile`` to start and stop the service:
 Run CliMAF WPS Demo as Docker container
 ---------------------------------------
 
-You can also run CliMAF WPS Demo as a Docker container, see the :ref:`Tutorial <tutorial>`.
+You can also run CliMAF WPS Demo as a Docker container ... 
 
 Use Ansible to deploy CliMAF WPS Demo on your System
 ----------------------------------------------------
