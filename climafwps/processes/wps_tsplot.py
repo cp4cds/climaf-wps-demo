@@ -16,7 +16,7 @@ ALLOWED_VALUES = {
         'IPSL-CM5A-LR IPSL-CM5A-MR IPSL-CM5B-LR MIROC4h MIROC5 MIROC-ESM '
         'MIROC-ESM-CHEM MPI-ESM-LR MPI-ESM-MR MRI-CGCM3 NorESM1-M NorESM1-ME'.split(),
     'experiment':
-        'rcp45 rcp60 rcp8'.split(),
+        'rcp45 rcp60 rcp8 historical'.split(),
     'variable':
         'cl clt evspsbl hur huss prc ps rldscs rlutcs rsdt '
         'rsut sci tas tauu ua vas cli clw hfls hurs '
