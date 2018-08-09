@@ -10,3 +10,5 @@ dependencies:
 - click
 - psutil
 - climaf
+- cdo=1.9.3
+- ncl=6.5
