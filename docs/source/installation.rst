@@ -3,6 +3,13 @@
 Installation
 ============
 
+.. warning::
+  
+  Due to a version conflict between ncl=6.5 and imagemagick in the
+  conda-forge channel you need to install imagemagick manually on your system:
+  ``$ yum install ImageMagick``
+
+
 Install from Anaconda
 ---------------------
 
@@ -89,7 +96,7 @@ You can also use the ``Makefile`` to start and stop the service:
 Run CliMAF WPS Demo as Docker container
 ---------------------------------------
 
-You can also run CliMAF WPS Demo as a Docker container ... 
+You can also run CliMAF WPS Demo as a Docker container ...
 
 Use Ansible to deploy CliMAF WPS Demo on your System
 ----------------------------------------------------
