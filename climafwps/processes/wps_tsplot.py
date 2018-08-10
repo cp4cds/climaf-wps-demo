@@ -30,17 +30,22 @@ class TimeSeriesPlot(Process):
     def __init__(self):
         inputs = [
             LiteralInput('model', 'Model',
+                         abstract="Climate model ID",
                          default='HadGEM2-ES', data_type='string',
                          allowed_values=ALLOWED_VALUES['model']),
             LiteralInput('experiment', 'Experiment',
+                         abstract="Experiment name",
                          default='rcp45', data_type='string',
                          allowed_values=ALLOWED_VALUES['experiment']),
             LiteralInput('variable', 'Variable',
+                         abstract="Variable ID",
                          default='tas', data_type='string',
                          allowed_values=ALLOWED_VALUES['variable']),
             LiteralInput('start_year', 'Start Year',
+                         abstract="4-digit start year",
                          default='2010', data_type='integer'),
             LiteralInput('end_year', 'End Year',
+                         abstract="4-digit end year",
                          default='2020', data_type='integer'),
         ]
         outputs = [
