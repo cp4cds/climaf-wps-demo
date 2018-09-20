@@ -31,7 +31,7 @@ class TimeSeriesPlot(Process):
         inputs = [
             LiteralInput('model', 'Model',
                          abstract="Climate model ID",
-                         default='MPI-ESM-LR ', data_type='string',
+                         default='MPI-ESM-LR', data_type='string',
                          allowed_values=ALLOWED_VALUES['model']),
             LiteralInput('experiment', 'Experiment',
                          abstract="Experiment name",
