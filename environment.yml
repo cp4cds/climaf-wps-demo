@@ -9,6 +9,6 @@ dependencies:
 - jinja2
 - click
 - psutil
-- climaf
+- climaf>=1.1.1
 - cdo=1.9.3
 - ncl=6.5
