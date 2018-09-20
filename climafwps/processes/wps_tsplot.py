@@ -31,7 +31,7 @@ class TimeSeriesPlot(Process):
         inputs = [
             LiteralInput('model', 'Model',
                          abstract="Climate model ID",
-                         default='HadGEM2-ES', data_type='string',
+                         default='MPI-ESM-LR', data_type='string',
                          allowed_values=ALLOWED_VALUES['model']),
             LiteralInput('experiment', 'Experiment',
                          abstract="Experiment name",
@@ -58,7 +58,7 @@ class TimeSeriesPlot(Process):
         super(TimeSeriesPlot, self).__init__(
             self._handler,
             identifier='tsplot',
-            version='1.1.0',
+            version='1.1.1',
             title='CMIP5 Global Mean Time Series',
             abstract='Uses the CliMAF tool to calculate a time series of global mean values'
                      ' for a variable, model, experiment and ensemble member from the CMIP5 archive.'
@@ -81,6 +81,7 @@ class TimeSeriesPlot(Process):
         )
 
     def _handler(self, request, response):
+        os.environ['CLIMAF_LOG_DIR'] = self.workdir
         from climafwps import tsplot
         response.update_status('Plotting ...', 0)
         # output in workdir
