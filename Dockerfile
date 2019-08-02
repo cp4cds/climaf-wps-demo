@@ -1,7 +1,7 @@
 # vim:set ft=dockerfile:
 FROM continuumio/miniconda3
 MAINTAINER https://github.com/cp4cds/climaf-wps-demo
-LABEL Description="CliMAF WPS Demo WPS" Vendor="Birdhouse" Version="1.1.0"
+LABEL Description="CliMAF WPS Demo WPS" Vendor="Birdhouse" Version="1.1.1"
 
 # Update Debian system
 RUN apt-get update && apt-get install -y \
