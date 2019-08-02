@@ -3,19 +3,16 @@
 Installation
 ============
 
+.. contents::
+    :local:
+    :depth: 1
+
+Install from Conda
+------------------
+
 .. warning::
-  
-  Due to a version conflict between ncl=6.5 and imagemagick in the
-  conda-forge channel you need to install imagemagick manually on your system:
-  ``$ yum install ImageMagick``
 
-
-Install from Anaconda
----------------------
-
-.. todo::
-
-   Prepare Conda package.
+   TODO: Prepare Conda package.
 
 Install from GitHub
 -------------------
@@ -78,8 +75,6 @@ Check the log files for errors:
 
    $ tail -f  pywps.log
 
-.. warning:: To be able to run the climaf processes you need to configure the CMIP5 data archive. At CEDA you can use ``climafwps start -c etc/ceda.cfg``.
-
 ... or do it the lazy way
 +++++++++++++++++++++++++
 
@@ -96,22 +91,16 @@ You can also use the ``Makefile`` to start and stop the service:
 Run CliMAF WPS Demo as Docker container
 ---------------------------------------
 
-You can also run CliMAF WPS Demo as a Docker container ...
+You can also run CliMAF WPS Demo as a Docker container.
+
+.. warning::
+
+  TODO: Describe Docker container support.
 
 Use Ansible to deploy CliMAF WPS Demo on your System
 ----------------------------------------------------
 
 Use the `Ansible playbook`_ for PyWPS to deploy CliMAF WPS Demo on your system.
-Follow the `example`_ for CliMAF WPS Demo given in the playbook.
-
-Building the docs
------------------
-
-First install dependencies for the documentation::
-
-  $ make bootstrap_dev
-  $ make docs
 
 
 .. _Ansible playbook: http://ansible-wps-playbook.readthedocs.io/en/latest/index.html
-.. _example: http://ansible-wps-playbook.readthedocs.io/en/latest/tutorial.html

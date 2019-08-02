@@ -20,7 +20,7 @@
 #
 import os
 import sys
-# sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath('../../'))
 
 
 # -- General configuration ---------------------------------------------
@@ -38,11 +38,6 @@ extensions = ['sphinx.ext.autodoc',
               'pywps.ext_autodoc',
               ]
 
-autoapi_type = 'python'
-autoapi_dirs = ['../../climafwps']
-autoapi_file_pattern = '*.py'
-autoapi_options = ['members', 'undoc-members', 'private-members']
-
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -57,7 +52,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'CliMAF WPS Demo'
-copyright = u"2018, Carsten Ehbrecht"
+copyright = u"2019, Carsten Ehbrecht"
 author = u"Carsten Ehbrecht"
 
 # The version info for the project you're documenting, acts as replacement
