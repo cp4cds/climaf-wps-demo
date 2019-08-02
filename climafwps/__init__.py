@@ -2,8 +2,6 @@
 
 """Top-level package for CliMAF WPS Demo."""
 
-from .wsgi import application
+from .__version__ import __author__, __email__, __version__
 
-__author__ = """Carsten Ehbrecht"""
-__email__ = 'ehbrecht@dkrz.de'
-__version__ = '1.1.0'
+from .wsgi import application

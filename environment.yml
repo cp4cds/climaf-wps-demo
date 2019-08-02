@@ -2,13 +2,18 @@ name: climafwps
 channels:
 - birdhouse
 - conda-forge
-- defaults
 dependencies:
-- pywps>=4.1.17
-- owslib=0.17
+- python=2.7
+- pip
+- six
+- pywps>=4.2.0
+- owslib>=0.18
 - jinja2
 - click
 - psutil
-- climaf>=1.1.1
-- cdo=1.9.3
-- ncl=6.5
+- climaf=1.1.1
+- ncl
+# cdo
+- cdo
+#- hdf5=1.10.3
+#- libnetcdf=4.6.1
